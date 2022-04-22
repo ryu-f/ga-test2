@@ -1,0 +1,26 @@
+name: Release Branch Push Test
+
+on:
+  push:
+    branches:
+      - tag-output-test1
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      release_tag: ${{ steps.get-release-tag.outputs.release_tag }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set Releas Tag
+        id: get-release-tag
+        run: |
+          RECENT_COMMIT_ID=`git rev-parse --short HEAD`
+          DATE=`date +'%Y%m%d'`
+          RELEASE_TAG="$DATE-$RECENT_COMMIT_ID"
+          echo "RELEASE_TAG is ${RELEASE_TAG}"
+          echo "::set-output name=release_tag::${RELEASE_TAG}"
