@@ -23,7 +23,7 @@ jobs:
         id: get-release-tag
         run: |
           echo ${{ github.event.pull_request.head.ref }}
-          RECENT_COMMIT_ID=`git rev-parse --short HEAD~1`
+          RECENT_COMMIT_ID=`git rev-parse --short HEAD`
           DATE=`date +'%Y%m%d'`
           RELEASE_TAG="$DATE-$RECENT_COMMIT_ID"
           echo "RELEASE_TAG is ${RELEASE_TAG}"
