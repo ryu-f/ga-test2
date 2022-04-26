@@ -19,7 +19,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 2
 
-      - run: git checkout HEAD^
+      - run: git checkout HEAD
 
       - name: dump context
         run: echo '${{ toJSON(github) }}'
