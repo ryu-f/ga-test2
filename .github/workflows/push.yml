@@ -16,9 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: dump context
-        run: echo '${{ toJSON(github) }}'
-
       - name: Set Releas Tag
         id: get-release-tag
         run: |
