@@ -25,6 +25,6 @@ jobs:
       - name: Set Releas Tag
         id: get-release-tag
         run: |
-          RELEASE_TAG=$(bash ./get_release_tag.sh HEAD)
+          RELEASE_TAG=$(bash ./get_release_tag.sh HEAD^)
           echo "RELEASE_TAG is ${RELEASE_TAG}"
           echo "::set-output name=release_tag::${RELEASE_TAG}"
