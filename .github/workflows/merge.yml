@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: dump context
         run: echo '${{ toJSON(github) }}'
