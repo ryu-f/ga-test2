@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: second
-        run: exit 1
+        run: exit 0
 
   third:
     name: Third
