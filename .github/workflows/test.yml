@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: one
-        run: exit 0
+        run: echo foo
 
   second:
     name: Second
@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: second
-        run: exit 0
+        run: echo bar
 
   third:
     name: Third
