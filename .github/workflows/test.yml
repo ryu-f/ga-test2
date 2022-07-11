@@ -21,8 +21,7 @@ jobs:
 
     steps:
       - name: one
-        run: |
-            mkdir hoge
+        run: exit 0
 
   second:
     name: Second
@@ -31,9 +30,7 @@ jobs:
 
     steps:
       - name: second
-        run: |
-            mkdir fuga
-            mkdir fuga
+        run: exit 1
 
   third:
     name: Third
@@ -41,5 +38,6 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - name: third
-        run: echo ${{ job.status }}
+      - uses: technote-space/workflow-conclusion-action@v1
+      - run: |
+          echo ${{ env.WORKFLOW_CONCLUSION }}
