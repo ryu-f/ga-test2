@@ -1,0 +1,42 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - develop
+
+permissions:
+  id-token: write
+  actions: read
+  contents: read
+
+env:
+  TZ: 'Asia/Tokyo'
+
+jobs:
+  first:
+    name: First
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      run: |
+          mkdir hoge
+
+  second:
+    name: Second
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      run: |
+          mkdir fuga
+          mkdir fuga
+
+  third:
+    name: Third
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      run: echo ${{ job.status }}
