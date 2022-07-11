@@ -20,8 +20,9 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      run: |
-          mkdir hoge
+      - name: one
+        run: |
+            mkdir hoge
 
   second:
     name: Second
@@ -29,9 +30,10 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      run: |
-          mkdir fuga
-          mkdir fuga
+      - name: second
+        run: |
+            mkdir fuga
+            mkdir fuga
 
   third:
     name: Third
@@ -39,4 +41,5 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      run: echo ${{ job.status }}
+      - name: third
+        run: echo ${{ job.status }}
