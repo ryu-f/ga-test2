@@ -39,7 +39,7 @@ jobs:
 
     steps:
       - uses: technote-space/workflow-conclusion-action@v1
-      - run: |
-          echo ${{ env.WORKFLOW_CONCLUSION }}
-      - run: |
-          exit ${{ env.WORKFLOW_CONCLUSION }}
+
+      - name: Return Failure
+        if: env.WORKFLOW_CONCLUSION != "success"
+        run: exit 1
