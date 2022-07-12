@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: second
-        run: echo bar
+        run: exit 1
 
   third:
     name: Third
