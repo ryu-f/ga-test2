@@ -25,6 +25,7 @@ jobs:
 
   second:
     name: Second
+    needs: [first]
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
@@ -34,6 +35,7 @@ jobs:
 
   third:
     name: Third
+    needs: [second]
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
