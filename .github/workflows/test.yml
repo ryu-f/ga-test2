@@ -41,5 +41,5 @@ jobs:
       - uses: technote-space/workflow-conclusion-action@v1
 
       - name: Return Failure
-        if: ${{ !contains(env.WORKFLOW_CONCLUSION, "success") }}
+        if: ${{ !contains(env.WORKFLOW_CONCLUSION, 'success') }}
         run: exit 1
